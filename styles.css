@@ -166,7 +166,7 @@ button {
       rgba(46, 47, 66, 0.5),
       rgba(46, 47, 66, 0.5)
     ),
-    url(/images/baner.jpg);
+    url(./images/baner.jpg);
   border-radius: 20px;
   height: auto;
   padding-top: 100px;
