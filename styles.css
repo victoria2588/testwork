@@ -1,6 +1,5 @@
 :root {
   --primary-font: Poppins, sans-serif;
-  --secondary-font: Raleway, sans-serif;
   --primary-color: #030303;
   --white-color: #ffffff;
   --logo-color: #00e6f3;
@@ -9,6 +8,7 @@
   --button-background: #cf0e48;
   --button-background-color: #0ff;
   --color-copiryt: #899194;
+  --transition-dur-and-func: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body {
@@ -17,7 +17,6 @@ body {
   font-weight: 600;
   letter-spacing: 0.02em;
   line-height: 1.5;
-
   background-color: var(--primary-color);
   color: var(--white-color);
 }
@@ -49,6 +48,7 @@ button {
   border-radius: 5px;
   padding: 4px 8px;
   border: transparent;
+  transition: color var(--transition-dur-and-func);
 }
 
 .list {
@@ -57,6 +57,7 @@ button {
 .link {
   text-decoration: none;
   cursor: pointer;
+  transition: color var(--transition-dur-and-func);
 }
 
 .container {
@@ -67,7 +68,7 @@ button {
   margin-right: auto;
 }
 
-@media screen and (min-width: 480px) {
+@media screen and (min-width: 400px) {
   .container {
     max-width: 400px;
   }
@@ -93,7 +94,7 @@ button {
 }
 
 .logotype-img {
-  height: 22px;
+  width: 60px;
 }
 
 .header-nav-list {
@@ -139,26 +140,11 @@ button {
 }
 
 .page-title {
-  font-family: var(--secondary-font);
-  font-size: 36px;
+  font-family: var(--primary-font);
+  font-size: 28px;
   font-weight: 700;
   text-align: center;
-  margin-top: 20px;
-}
-
-@media screen and (max-width: 767px) {
-  .header-nav {
-    order: 2;
-    margin-top: 12px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .page-title {
-    margin-top: 24px;
-  }
+  margin-top: 16px;
 }
 
 .title {
@@ -170,38 +156,66 @@ button {
 
 .page-text {
   font-weight: 400;
-  margin-top: 20px;
+  margin-top: 12px;
 }
 
 .baner-container {
   text-align: center;
   background-size: cover;
-  background-image: url(/images/baner-003.jpg);
+  background-image: linear-gradient(
+      rgba(46, 47, 66, 0.5),
+      rgba(46, 47, 66, 0.5)
+    ),
+    url(/images/baner.jpg);
   border-radius: 20px;
   height: auto;
   padding-top: 100px;
   padding-bottom: 100px;
+  margin-top: 12px;
   margin-left: auto;
   margin-right: auto;
   background-repeat: no-repeat;
   background-position: center;
   background-color: var(--primary-color);
 }
+.baner-container:hover {
+  transform: scale(1.01);
+  transition: 250ms linear;
+}
+
+.hero-subtitle {
+  font-family: var(--primary-font);
+  font-weight: 600;
+  font-size: 24px;
+}
+
+.hero-button {
+  font-weight: 700;
+  background-color: var(--button-background-color);
+  color: var(--primary-color);
+  margin-top: 12px;
+}
+
+.hero-button:hover,
+.hero-button:focus {
+  background-color: #cf0e48;
+  color: var(--white-color);
+}
 
 .footer {
-  margin-top: 40px;
+  margin-top: 24px;
 }
 
 .paymants-list {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 32px;
-  height: 72px;
+  gap: 24px;
+  height: 64px;
   background-color: var(--background-paymants);
+  border-radius: 20px;
 }
-.paymant-item {
-}
+
 .paymant-img {
   height: 15px;
 }
@@ -209,7 +223,7 @@ button {
 .footer-nav-list {
   display: flex;
   justify-content: space-around;
-  margin-top: 40px;
+  margin-top: 16px;
 }
 
 .footer-nav-link {
@@ -223,11 +237,54 @@ button {
 }
 
 .copyright-text {
-  font-size: 13px;
+  font-size: 9px;
   text-align: center;
   color: var(--color-copiryt);
   border-top: 1px solid #20262e;
-  margin-top: 24px;
+  margin-top: 16px;
   padding-top: 12px;
   padding-bottom: 12px;
+}
+
+@media screen and (max-width: 767px) {
+  .header-nav {
+    order: 2;
+    margin-top: 12px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .logotype-img {
+    width: auto;
+    height: 22px;
+  }
+
+  .page-title {
+    margin-top: 24px;
+    font-size: 36px;
+  }
+
+  .page-text {
+    margin-top: 20px;
+  }
+
+  .footer {
+    margin-top: 40px;
+  }
+
+  .paymants-list {
+    gap: 32px;
+    height: 72px;
+  }
+
+  .footer-nav-list {
+    margin-top: 40px;
+  }
+
+  .copyright-text {
+    font-size: 13px;
+    margin-top: 24px;
+  }
 }
