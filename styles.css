@@ -40,7 +40,7 @@ ol {
 img {
   display: block;
   max-width: 100%;
-  height: auto;
+  /* height: auto; */
 }
 
 button {
@@ -91,10 +91,6 @@ button {
   justify-content: space-between;
   flex-wrap: wrap;
   padding-top: 12px;
-}
-
-.logotype-img {
-  width: 60px;
 }
 
 .header-nav-list {
@@ -168,6 +164,7 @@ button {
     ),
     url(./images/baner.jpg);
   border-radius: 20px;
+  width: 370px;
   height: auto;
   padding-top: 100px;
   padding-bottom: 100px;
@@ -216,10 +213,6 @@ button {
   border-radius: 20px;
 }
 
-.paymant-img {
-  height: 15px;
-}
-
 .footer-nav-list {
   display: flex;
   justify-content: space-around;
@@ -256,11 +249,6 @@ button {
 }
 
 @media screen and (min-width: 768px) {
-  .logotype-img {
-    width: auto;
-    height: 22px;
-  }
-
   .page-title {
     margin-top: 24px;
     font-size: 36px;
@@ -268,6 +256,10 @@ button {
 
   .page-text {
     margin-top: 20px;
+  }
+
+  .baner-container {
+    width: 738px;
   }
 
   .footer {
@@ -286,5 +278,11 @@ button {
   .copyright-text {
     font-size: 13px;
     margin-top: 24px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .baner-container {
+    width: 1170px;
   }
 }
